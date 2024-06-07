@@ -1,4 +1,9 @@
-name: ci
+# name: ci
+name: set lower case owner name
+  run:
+    echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+env:
+  OWNER: '${{ github.repository_owner }}'
 
 on:
   push:
